@@ -1,0 +1,14 @@
+*.pyc
+*.db
+.DS_Store
+.idea
+.Python
+lib
+bin
+include
+intermediate
+publish
+buildinfo.properties
+src
+media
+fixtures

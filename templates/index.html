@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <ul>
+        <li>API - <a href="/playlist/api/v1/?format=json">/playlist/api/v1/?format=json</a></li>
+    </ul>
+    <p>
+        I need full album data on each track for view purposes - a track json will look like this <a href="/playlist/api/v1/tracks/1/?format=json">/playlist/api/v1/tracks/1/?format=json</a>
+    </p>
+    <pre>
+    {"album": {"id": "1", "resource_uri": "/playlist/api/v1/albums/1/", "title": "Physical Graffiti"}, "id": "1", "resource_uri": "/playlist/api/v1/tracks/1/", "title": "Custard Pie", "track_number": 1}
+    </pre>
+    My hope would be that I could change the track infomration in this model and post it back but that does not seem to work
+    <pre>
+    curl -H 'Content-Type: application/json' -X PUT --data @- "http://localhost:8000/playlist/api/v1/tracks/1/"
+    {"album": {"id": "1", "resource_uri": "/playlist/api/v1/albums/1/", "title": "Physical Graffiti"}, "id": "1", "resource_uri": "/playlist/api/v1/tracks/1/", "title": "Custard Pie - title change", "track_number": 1}
+    ctrl+d
+    </pre>
+    <p>
+        With this example you will get FieldError: Cannot resolve keyword 'resource_uri' into field. Choices are: artist, id, title, track\n"}s<br>
+        With other examples where the related resource (album) has date/datetimes in them they do not get properly formatted and you will get an error: Enter a valid date/time in YYYY-MM-DD HH:MM[:ss[.uuuuuu]] format.
+    </p>
+{% endblock %}
