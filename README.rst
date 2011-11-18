@@ -15,7 +15,11 @@ What is the best way to do this?
 I want extra read only attributes of a related resources but also what to be able to use the same resource for updating.
 
 Installation
-============
-Standard virtualenv setup.
+------------
+Install requirements with ``pip``::
+
      pip install -r requirements.txt
+
+Sync the database::
+
      ./manage.py syncdb
