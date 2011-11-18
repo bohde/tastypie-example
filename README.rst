@@ -23,3 +23,7 @@ Install requirements with ``pip``::
 Sync the database::
 
      ./manage.py syncdb
+
+Additional Info
+---------------
+Specifics of the issue can be found by running the app and pointing to the index page @ http://127.0.0.1:8000
