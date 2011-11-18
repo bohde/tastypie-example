@@ -13,3 +13,9 @@ The problem is that the resulting json can not be put back to the server to be u
 
 What is the best way to do this?
 I want extra read only attributes of a related resources but also what to be able to use the same resource for updating.
+
+Installation
+============
+Standard virtualenv setup.
+     pip install -r requirements.txt
+     ./manage.py syncdb
