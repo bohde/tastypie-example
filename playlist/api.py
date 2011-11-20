@@ -18,6 +18,8 @@ class ArtistResource(ModelResource):
 
 
 class AlbumResource(ModelResource):
+    artist = fields.ToOneField('playlist.api.ArtistResource', 'artist')
+
     class Meta:
         queryset = Album.objects.all()
         resource_name = 'albums'
