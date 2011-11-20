@@ -8,6 +8,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^playlist/', include('playlist.urls')),
+    url(r'^', include('playlist.urls')),
     url(r'^$', views.index),
 )
